@@ -8,9 +8,6 @@ public class Appointment(DateTime appointmentAt, decimal price, string? descript
     public const int MinPrice = 5;
     public const int MaxPrice = 100;
     
-    [Key]
-    public Guid Id { get; set; }
-
     [Required]
     public DateTime AppointmentAt { get; init; } = appointmentAt;
     
