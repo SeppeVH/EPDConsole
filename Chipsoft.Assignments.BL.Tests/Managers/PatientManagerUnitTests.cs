@@ -27,7 +27,7 @@ public class PatientManagerUnitTests
     public void GetAllPatients_ShouldCallReadAllOnce()
     {
         // Arrange
-        _patientRepositoryMock.Setup(pr => pr.ReadAll()).Returns(new List<Domain.Patient>());
+        _patientRepositoryMock.Setup(pr => pr.ReadAll()).Returns(new List<Patient>());
         
         // Act
         var result = _patientManager.GetAllPatients();

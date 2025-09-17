@@ -20,6 +20,9 @@ public class PatientManager(IPatientRepository pr): IPatientManager
         pr.Create(newPatient);
         return newPatient;
     }
-    
-    
+
+    public void DeletePatient(Guid id)
+    {
+        pr.Delete(pr.Read(id));
+    }
 }

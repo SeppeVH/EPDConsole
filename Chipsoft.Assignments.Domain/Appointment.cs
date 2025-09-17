@@ -2,7 +2,7 @@
 
 namespace Chipsoft.Assignments.Domain;
 
-public class Appointment(DateTime appointmentAt, decimal price, string? description = null) : IValidatableObject
+public class Appointment(DateTime appointmentAt, double price, string? description = null) : IValidatableObject
 {
     public const int MaxDescriptionLength = 500;
     public const int MinPrice = 5;
@@ -15,7 +15,7 @@ public class Appointment(DateTime appointmentAt, decimal price, string? descript
     public string? Description { get; init; } = description;
     
     [Range(MinPrice, MaxPrice)]
-    public decimal Price { get; init; } = price;
+    public double Price { get; init; } = price;
     
     [Required] public Patient? Patient { get; set; }
     [Required] public Physician? Physician { get; set; }
