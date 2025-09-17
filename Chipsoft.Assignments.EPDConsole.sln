@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.BL", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.DAL", "Chipsoft.Assignments.DAL\Chipsoft.Assignments.DAL.csproj", "{516830BE-1191-49AC-9455-EF63FF4C9FC9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chipsoft.Assignments.BL.Tests", "Chipsoft.Assignments.BL.Tests\Chipsoft.Assignments.BL.Tests.csproj", "{B8A9C538-97C0-472E-849A-847995B5AA64}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{516830BE-1191-49AC-9455-EF63FF4C9FC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{516830BE-1191-49AC-9455-EF63FF4C9FC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{516830BE-1191-49AC-9455-EF63FF4C9FC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8A9C538-97C0-472E-849A-847995B5AA64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A9C538-97C0-472E-849A-847995B5AA64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A9C538-97C0-472E-849A-847995B5AA64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A9C538-97C0-472E-849A-847995B5AA64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

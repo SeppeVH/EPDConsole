@@ -10,6 +10,12 @@ public class EPDDbContext(DbContextOptions<EPDDbContext> options) : DbContext(op
     protected override void OnConfiguring(DbContextOptionsBuilder options)
         => options.UseSqlite($"Data Source=epd.db").UseLoggerFactory(LoggerFactory.Create(_ => {}));
     
+    public bool CreateDataBase(bool dropDataBase)
+    {
+        if (dropDataBase) Database.EnsureDeleted();
+        return Database.EnsureCreated();
+    }
+    
     public DbSet<Patient> Patients { get; set; }
     public DbSet<Physician> Physicians { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
