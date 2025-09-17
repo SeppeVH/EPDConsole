@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Chipsoft.Assignments.EPDConsole
+namespace Chipsoft.Assignments.DAL.EF
 {
     public class EPDDbContext : DbContext
     {

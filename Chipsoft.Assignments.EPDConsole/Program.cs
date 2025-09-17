@@ -1,4 +1,6 @@
-﻿namespace Chipsoft.Assignments.EPDConsole
+﻿using Chipsoft.Assignments.DAL.EF;
+
+namespace Chipsoft.Assignments.EPDConsole
 {
     public class Program
     {
@@ -83,7 +85,7 @@
                     case 7:
                         return false;
                     case 8:
-                        EPDDbContext dbContext = new EPDDbContext();
+                        var dbContext = new EPDDbContext();
                         dbContext.Database.EnsureDeleted();
                         dbContext.Database.EnsureCreated();
                         return true;
