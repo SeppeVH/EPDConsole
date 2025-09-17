@@ -7,11 +7,19 @@ namespace Chipsoft.Assignments.DAL.Repositories;
 
 public class AppointmentRepository(EPDDbContext context) : Repository<Appointment, Guid>(context), IAppointmentRepository 
 {
-    public IEnumerable<Appointment> GetAppointmentsByPhysicianAndDate(Guid physicianId, DateTime date)
+    public IEnumerable<Appointment> ReadAppointmentsByPhysicianAndDate(Guid physicianId, DateTime date)
     {
         return context.Appointments
             .Include(a => a.Physician)
             .Where(a => a.Physician != null && a.Physician.Id == physicianId && a.AppointmentAt.Date == date.Date)
+            .ToList();
+    }
+
+    public IEnumerable<Appointment> ReadAppointmentsWithPatientAndPhysician()
+    {
+        return context.Appointments
+            .Include(a => a.Patient)
+            .Include(a => a.Physician)
             .ToList();
     }
 }

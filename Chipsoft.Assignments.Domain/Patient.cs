@@ -16,4 +16,9 @@ public class Patient(string name, string email, DateTime birthdate, string addre
         if (Birthdate >= DateTime.Now) results.Add(new ValidationResult("Birthdate must be in the past.", new[] { nameof(Birthdate) }));
         return results;
     }
+
+    public override string ToString()
+    {
+        return $"Patient: {Name}, Email: {Email}, Birthdate: {Birthdate.ToShortDateString()}, Address: {Address}, PhoneNumber: {PhoneNumber}";
+    }
 }

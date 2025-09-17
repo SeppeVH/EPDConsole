@@ -4,5 +4,6 @@ namespace Chipsoft.Assignments.DAL.Repositories.Interfaces;
 
 public interface IAppointmentRepository: IRepository<Appointment, Guid>
 {
-    IEnumerable<Appointment> GetAppointmentsByPhysicianAndDate(Guid physicianId, DateTime date);
+    IEnumerable<Appointment> ReadAppointmentsByPhysicianAndDate(Guid physicianId, DateTime date);
+    IEnumerable<Appointment> ReadAppointmentsWithPatientAndPhysician();
 }

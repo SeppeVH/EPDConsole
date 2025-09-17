@@ -28,4 +28,8 @@ public class Appointment(DateTime appointmentAt, double price, string? descripti
         return results;
     }
 
+    public override string ToString()
+    {
+        return $"Patient: {Patient?.Name}, Physician: {Physician?.Name}, Appointment At: {AppointmentAt}, Price: {Price} Description: {Description}";
+    }
 }

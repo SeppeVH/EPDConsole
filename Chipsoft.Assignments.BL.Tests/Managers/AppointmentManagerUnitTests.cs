@@ -33,7 +33,7 @@ public class AppointmentManagerUnitTests
     public void AddAppointment_ThrowsValidationException_WhenAppointmentAtInPast()
     {
         // Arrange
-        _mockAppointmentRepository.Setup(ar => ar.GetAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
+        _mockAppointmentRepository.Setup(ar => ar.ReadAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
             .Returns(new List<Appointment>());
         
         var invalidAppointmentAt = DateTime.Now.AddDays(-1);
@@ -51,7 +51,7 @@ public class AppointmentManagerUnitTests
     public void AddAppointment_ThrowsValidationException_WhenDescriptionTooLong()
     {
         // Arrange
-        _mockAppointmentRepository.Setup(ar => ar.GetAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
+        _mockAppointmentRepository.Setup(ar => ar.ReadAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
             .Returns(new List<Appointment>());
         
         var validAppointmentAt = DateTime.Now.AddDays(1);
@@ -70,7 +70,7 @@ public class AppointmentManagerUnitTests
     public void AddAppointment_ThrowsValidationException_WhenPriceNotInRange()
     {
         // Arrange
-        _mockAppointmentRepository.Setup(ar => ar.GetAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
+        _mockAppointmentRepository.Setup(ar => ar.ReadAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
             .Returns(new List<Appointment>());
         
         var validAppointmentAt = DateTime.Now.AddDays(1);
@@ -88,7 +88,7 @@ public class AppointmentManagerUnitTests
     public void AddAppointment_ThrowsValidationException_WhenPhysicianIsNotAvailable()
     {
         // Arrange
-        _mockAppointmentRepository.Setup(ar => ar.GetAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
+        _mockAppointmentRepository.Setup(ar => ar.ReadAppointmentsByPhysicianAndDate(It.IsAny<Guid>(), It.IsAny<DateTime>()))
             .Returns(new List<Appointment> {new Appointment(DateTime.Now.AddDays(1).AddHours(1), 100) { Physician = _physician }});
         
         var validAppointmentAt = DateTime.Now.AddDays(1);

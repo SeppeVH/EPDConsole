@@ -18,4 +18,9 @@ public class Physician(string name, string email, string workFloor, DateTime hir
         if (HiredAt > DateTime.Now) results.Add(new ValidationResult("Hired date cannot be in the future.", [nameof(HiredAt)]));
         return results;
     }
+
+    public override string ToString()
+    {
+        return $"Physician: {Name}, Email: {Email}, WorkFloor: {WorkFloor}, HiredAt: {HiredAt.ToShortDateString()}, PhoneNumber: {PhoneNumber}";
+    }
 }

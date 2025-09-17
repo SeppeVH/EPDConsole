@@ -9,12 +9,12 @@ public class AppointmentManager(IAppointmentRepository ap) : IAppointmentManager
 {
     public IEnumerable<Appointment> GetAllAppointments()
     {
-        return ap.ReadAll();
+        return ap.ReadAppointmentsWithPatientAndPhysician();
     }
 
     public Appointment? AddAppointment(DateTime appointmentAt, double price, string? description, Patient patient, Physician physician)
     {
-        var existingAppointments = ap.GetAppointmentsByPhysicianAndDate(physician.Id, appointmentAt);
+        var existingAppointments = ap.ReadAppointmentsByPhysicianAndDate(physician.Id, appointmentAt);
         if (existingAppointments.Any()) throw new ValidationException("The physician already has an appointment at this date and time.");
         
         var newAppointment = new Appointment(appointmentAt, price, description) {Patient = patient, Physician = physician};
